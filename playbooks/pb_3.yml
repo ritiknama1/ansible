@@ -1,0 +1,16 @@
+---
+- name: Verify VMs are up and responding
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Test connectivity with ping
+      ansible.builtin.ping:
+
+    - name: Check system uptime
+      ansible.builtin.command: uptime
+      register: result
+
+    - name: Show uptime output
+      ansible.builtin.debug:
+        var: result.stdout

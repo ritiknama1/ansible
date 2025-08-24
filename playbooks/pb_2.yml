@@ -1,0 +1,6 @@
+- name: Simple ping test
+  hosts: all
+  tasks:
+    - name: Ping the VMs
+      ansible.builtin.ping:
+
